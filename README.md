@@ -1,4 +1,4 @@
-<img width="700" height="200" alt="image" src="https://github.com/user-attachments/assets/27dd5f07-c73c-4222-a20c-c916fee942be" />
+<img width="300" height="80" alt="image" src="https://github.com/user-attachments/assets/27dd5f07-c73c-4222-a20c-c916fee942be" /> <img width="300" height="250" alt="image" src="https://github.com/user-attachments/assets/6a638f1b-f520-4072-9301-ae9185a1bcae" />
 
 # CAN-based monitoring and Predictive maintenance system
 
