@@ -1,0 +1,135 @@
+#include <Arduino_RouterBridge.h>
+#include <SPI.h>
+#include <mcp2515.h>
+#include <cstdio>   // snprintf
+
+static const uint8_t PIN_CS = 10;
+
+#define CAN_SPEED CAN_500KBPS
+#define CAN_CLOCK MCP_16MHZ   // if needed try MCP_8MHZ
+
+MCP2515 mcp2515(PIN_CS);
+
+struct CanFrame {
+  uint32_t id;
+  uint8_t  dlc;
+  uint8_t  data[8];
+  uint32_t t_ms;
+  bool     extended;
+};
+
+// Ring buffer
+static const uint16_t RB_SIZE = 64;
+volatile uint16_t rb_head = 0;
+volatile uint16_t rb_tail = 0;
+CanFrame rb[RB_SIZE];
+
+// Counters
+volatile uint32_t rx_count = 0;
+volatile uint32_t buf_push_ok = 0;
+volatile uint32_t buf_overflow = 0;
+volatile uint32_t rx_error = 0;
+
+static inline bool rb_is_full() {
+  return ((rb_head + 1) % RB_SIZE) == rb_tail;
+}
+static inline bool rb_is_empty() {
+  return rb_head == rb_tail;
+}
+static inline void rb_push_fast(const CanFrame &f) {
+  if (rb_is_full()) { buf_overflow++; return; }
+  rb[rb_head] = f;
+  rb_head = (rb_head + 1) % RB_SIZE;
+  buf_push_ok++;
+}
+
+// Build ONE line and print it in ONE call (prevents interleaving/chunking)
+static void printFrameClean(const CanFrame& f) {
+  char line[200];
+  int n = 0;
+
+  n += snprintf(line + n, sizeof(line) - n,
+                "ID=0x%lX %s DLC=%u t_ms=%lu data=",
+                (unsigned long)f.id,
+                f.extended ? "EXT" : "STD",
+                (unsigned)f.dlc,
+                (unsigned long)f.t_ms);
+
+  for (uint8_t i = 0; i < f.dlc && n < (int)sizeof(line) - 4; i++) {
+    n += snprintf(line + n, sizeof(line) - n,
+                  "%02X%s",
+                  (unsigned)f.data[i],
+                  (i + 1 < f.dlc) ? " " : "");
+  }
+
+  Monitor.println(line);
+  Monitor.println(); // extra separator line so merged packets are still readable
+}
+
+static void printStatsClean() {
+  // Leading newline helps avoid “[STATS]...ID=0x...” glue in the UI
+  char s[160];
+  snprintf(s, sizeof(s),
+           "\n[STATS] rx_count=%lu push_ok=%lu buf_overflow=%lu rx_error=%lu",
+           (unsigned long)rx_count,
+           (unsigned long)buf_push_ok,
+           (unsigned long)buf_overflow,
+           (unsigned long)rx_error);
+  Monitor.println(s);
+}
+
+void setup() {
+  Monitor.begin();
+  delay(800);
+
+  Monitor.println("BOOT: Autowp MCP2515 RX (polling) starting...");
+  Monitor.println();
+
+  SPI.begin();
+
+  mcp2515.reset();
+  mcp2515.setBitrate(CAN_SPEED, CAN_CLOCK);
+  mcp2515.setNormalMode();
+
+  Monitor.println("READY: MCP2515 configured (NORMAL mode)");
+  Monitor.println();
+}
+
+void loop() {
+  // Poll for frames
+  struct can_frame frame;
+  MCP2515::ERROR err = mcp2515.readMessage(&frame);
+
+  if (err == MCP2515::ERROR_OK) {
+    CanFrame f;
+    f.id = frame.can_id & 0x1FFFFFFF;
+    f.extended = (frame.can_id & CAN_EFF_FLAG) != 0;
+    f.dlc = frame.can_dlc;
+
+    for (uint8_t i = 0; i < 8; i++) f.data[i] = frame.data[i];
+    f.t_ms = (uint32_t)millis();
+
+    rx_count++;
+    rb_push_fast(f);
+  } else if (err != MCP2515::ERROR_NOMSG) {
+    rx_error++;
+  }
+
+  // Stats every 5 seconds (reduces collisions with frame prints)
+  static uint32_t lastStats = 0;
+  if (millis() - lastStats > 5000) {
+    lastStats = (uint32_t)millis();
+    printStatsClean();
+  }
+
+  // Print frames at a limited rate (max 10 per second)
+  static uint32_t lastFramePrint = 0;
+  if (!rb_is_empty() && (millis() - lastFramePrint > 100)) {
+    lastFramePrint = (uint32_t)millis();
+    CanFrame f = rb[rb_tail];
+    rb_tail = (rb_tail + 1) % RB_SIZE;
+    printFrameClean(f);
+  }
+
+  delay(1);
+}
