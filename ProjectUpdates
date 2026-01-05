@@ -1,0 +1,102 @@
+📅 Project Update — 2026-01-05
+Phase 3 – MCU Software Architecture Completed & Stabilised
+
+Today’s work focused on closing Phase 3 properly, aligning documentation with the actual integrated system, and resolving a real-world driver integration issue on the Arduino UNO Q platform.
+
+✅ What was achieved today
+1. CAN reception fully validated on hardware
+
+MCP2515 successfully receiving CAN frames from external CAN transmit software
+
+Stable reception confirmed with:
+
+correct CAN IDs and payloads
+
+consistent timing (t_ms) aligned with transmit period
+
+zero receive errors under nominal load
+
+Ring buffer counters verified:
+
+rx_count == push_ok
+
+buf_overflow == 0
+
+rx_error == 0
+
+2. Driver library issue identified and resolved
+
+Initial MCP2515 library blocked during CAN initialization on Arduino UNO Q
+
+Hardware and SPI transport were verified independently (SPI register reads OK)
+
+Issue isolated to library behavior on this platform
+
+Driver replaced with Autowp MCP2515 library
+
+New driver demonstrated:
+
+non-blocking initialization
+
+reliable frame reception
+
+clean error handling
+
+This confirmed the value of treating the driver layer as replaceable in the architecture.
+
+3. Diagnostic output stabilised for UNO Q
+
+Identified that UNO Q Monitor output can interleave text due to RouterBridge transport
+
+Refactored diagnostics to:
+
+assemble full log lines in memory
+
+emit each message in a single print call
+
+rate-limit frame and stats output
+
+Result: clean, readable CAN frame logs suitable for tutorials and debugging
+
+4. Phase 3 documentation fully restructured and finalised
+
+Phase 3 documentation is now split into five clean, single-purpose PDFs:
+
+PDF 3.1 – MCU Responsibilities & Task Design
+(architecture only, unchanged by implementation details)
+
+PDF 3.2 – MCP2515 Driver Overview
+(driver role, expectations, polling choice for Phase 3)
+
+PDF 3.3 – CAN Receive Loop & Buffering
+(polling loop, ring buffer, counters, decoupling)
+
+PDF 3.4 – Timing & Data Integrity
+(timestamping strategy, integrity definition, validation via counters)
+
+PDF 3.X – Driver Library Change (Root Cause & Resolution)
+(documents the library failure, investigation, and resolution)
+
+All PDFs:
+
+reference MCU.ino for implementation
+
+intentionally avoid embedding source code
+
+preserve architectural intent while documenting real integration learning
+
+5. Phase 3 formally closed
+
+Architecture validated against real hardware behavior
+
+Documentation aligned with implementation
+
+No open technical debt in Phase 3
+
+🔜 Next Steps
+
+Begin Phase 4 – Inter-Processor Communication
+
+Introduce Arduino Bridge / RPC concepts
+
+Transition from local diagnostics to MCU → Linux data transfer
