@@ -31,6 +31,7 @@ Data logging & basic predictive maintenance algorithms
 Clear documentation at every stage
 
 I’ll be sharing hardware photos/videos, architecture diagrams, and short PDFs explaining why each decision is made , not just what works.
+<img width="1200" height="544" alt="image" src="https://github.com/user-attachments/assets/caf98b4b-6101-4ae0-a3e3-f1ffa3dfe890" />
 
 
 The PLAN (Lets see how far we can get in 2026 !!) :
