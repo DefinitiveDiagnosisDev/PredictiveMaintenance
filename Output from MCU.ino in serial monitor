@@ -1,27 +1,14 @@
 
-
-
 [STATS] rx_count=76 push_ok=76 buf_overflow=0 rx_error=0
 ID=0x111 STD DLC=8 t_ms=10453 data=03 11 FF FF FF FF 33 00
 ID=0x111 STD DLC=8 t_ms=11456 data=03 11 FF FF FF FF 33 00
-
-
 ID=0x111 STD DLC=8 t_ms=12457 data=03 11 FF FF FF FF 33 00
 ID=0x111 STD DLC=8 t_ms=13456 data=03 11 FF FF FF FF 33 00
-
-
 ID=0x111 STD DLC=8 t_ms=14458 data=03 11 FF FF FF FF 33 00
-
-
 [STATS] rx_count=81 push_ok=81 buf_overflow=0 rx_error=0
 ID=0x111 STD DLC=8 t_ms=15455 data=03 11 FF FF FF FF 33 00
 ID=0x111 STD DLC=8 t_ms=16458 data=03 11 FF FF FF FF 33 00
-
 ID=0x111 STD DLC=8 t_ms=17450 data=03 11 FF FF FF FF 33 00
-
 ID=0x111 STD DLC=8 t_ms=18453 data=03 11 FF FF FF FF 33 00
-
-
 ID=0x111 STD DLC=8 t_ms=19455 data=03 11 FF FF FF FF 33 00
-
 [STATS] rx_count=86 push_ok=86 buf_overflow=0 rx_error=0
