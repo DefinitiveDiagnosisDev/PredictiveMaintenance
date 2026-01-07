@@ -1,3 +1,88 @@
+📅 Daily Progress Update – 2026-01-07
+Phase 4 – Inter-Processor Communication
+
+Milestone reached: MCU → Linux bridge validated
+
+Today’s focus was on completing the first inter-processor communication sanity check and documenting the learnings properly.
+
+✅ What was achieved
+
+Successfully established one-way communication from MCU to Linux using the Arduino UNO Q Bridge
+
+Validated periodic message transfer (bridge_alive counter at 1 Hz)
+
+Confirmed:
+
+message delivery is reliable
+
+payload integrity is preserved
+
+MCU remains stable during communication
+
+This marks the first confirmed data path across the MCU ↔ Linux boundary
+
+🔍 Key technical learnings
+
+The Arduino UNO Q Bridge Python API does not support Bridge.on()
+
+Correct pattern is:
+
+Bridge.provide() on the Linux/Python side
+
+Bridge.notify() (or Bridge.call()) on the MCU side
+
+Python process lifetime is critical
+
+If the Python script exits, App Lab shuts down the entire application
+
+A persistent event loop is mandatory, even for simple tests
+
+Startup sequencing matters
+
+The MCU can begin sending messages before the Python runtime is ready
+
+Adding a deliberate startup delay avoids silent message loss
+
+Keeping the payload minimal (single counter value) made validation unambiguous and debugging far easier
+
+📄 Documentation updates
+
+PDF 4.2 – Bridge Sanity Check & First Message
+
+Marked as validated on hardware
+
+PDF 4.2.1 – Implementation Walkthrough & Key Learnings
+
+Added full MCU and Python reference code
+
+Captured root causes, fixes, and rationale
+
+Highlighted this step as a major project milestone
+
+🧭 Why this matters
+
+This step proves that:
+
+the bridge infrastructure works in practice
+
+architectural separation between MCU and Linux is viable
+
+the project can now safely progress toward transferring real CAN data
+
+The “baby steps” approach paid off by making failure modes clear and recoverable.
+
+🔜 Next steps
+
+Define message formats and contracts (PDF 4.3)
+
+Prepare for sending a single fixed CAN frame across the bridge
+
+Continue incremental validation before increasing complexity
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 📅 Project Update — 2026-01-05
 Phase 3 – MCU Software Architecture Completed & Stabilised
 
