@@ -1,3 +1,12 @@
+
+📅 Daily Progress Update – 2026-01-08
+
+Phase 4 complete - sketch and python scrips added
+
+Real CAN data sent across bridge and printed in linux with 0 dropped frames/losses at 1ms tx
+
+-------------------------------------------------------------------------------------------------------
+
 📅 Daily Progress Update – 2026-01-07
 Phase 4 – Inter-Processor Communication
 
