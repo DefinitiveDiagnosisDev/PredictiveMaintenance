@@ -1,6 +1,7 @@
 
 # CAN-based monitoring and Predictive maintenance system
-<img width="800" height="350" alt="image" src="https://github.com/user-attachments/assets/7a9d2f58-3af3-4a22-b40c-1d6b6943a6b9" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/7a9d2f58-3af3-4a22-b40c-1d6b6943a6b9" /><img width="400" height="350" alt="image" src="https://github.com/user-attachments/assets/d3096948-dca9-42dd-8f7e-c87ef69653c7" />
+
 
 I’m starting a step-by-step engineering series where I design a CAN monitoring and predictive maintenance system from scratch - slowly, transparently, and using real systems engineering practices.
 This is a learning journey for me but I look forward to learning from your comments also. Off we go down another rabbit hole !!!!!
