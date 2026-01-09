@@ -1,0 +1,76 @@
+ts_iso = datetime.utcnow().isoformat(timespec="milliseconds") + "Z"
+[STATS] frames_seen=3 decoded=3 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=6 decoded=6 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=9 decoded=9 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=12 decoded=12 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=15 decoded=15 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=18 decoded=18 ECU_A=14.00 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=21 decoded=21 ECU_A=13.60 V ECU_B=14.10 V DCDC=14.10 V
+[ALERT][HARNESS_A] ECU_A=13.30 V ECU_B=14.10 V DCDC=14.10 V | ECU_A low vs DCDC (ΔA=+0.80 V, ΔB=+0.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=24 decoded=24 ECU_A=13.30 V ECU_B=14.10 V DCDC=14.10 V
+[ALERT][HARNESS_A] ECU_A=13.10 V ECU_B=14.10 V DCDC=14.10 V | ECU_A low vs DCDC (ΔA=+1.00 V, ΔB=+0.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=27 decoded=27 ECU_A=13.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=30 decoded=30 ECU_A=13.40 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=33 decoded=33 ECU_A=13.80 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=36 decoded=36 ECU_A=14.00 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=39 decoded=39 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=42 decoded=42 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=45 decoded=45 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=48 decoded=48 ECU_A=14.10 V ECU_B=13.70 V DCDC=14.10 V
+[STATS] frames_seen=51 decoded=51 ECU_A=14.10 V ECU_B=13.40 V DCDC=14.10 V
+[ALERT][HARNESS_B] ECU_A=14.10 V ECU_B=13.20 V DCDC=14.10 V | ECU_B low vs DCDC (ΔA=+0.00 V, ΔB=+0.90 V, DCDC≈14.1 V)
+[STATS] frames_seen=54 decoded=54 ECU_A=14.10 V ECU_B=13.20 V DCDC=14.10 V
+[ALERT][HARNESS_B] ECU_A=14.10 V ECU_B=12.90 V DCDC=14.10 V | ECU_B low vs DCDC (ΔA=+0.00 V, ΔB=+1.20 V, DCDC≈14.1 V)
+[STATS] frames_seen=57 decoded=57 ECU_A=14.10 V ECU_B=12.90 V DCDC=14.10 V
+[ALERT][HARNESS_B] ECU_A=14.10 V ECU_B=12.80 V DCDC=14.10 V | ECU_B low vs DCDC (ΔA=+0.00 V, ΔB=+1.30 V, DCDC≈14.1 V)
+[STATS] frames_seen=60 decoded=60 ECU_A=14.10 V ECU_B=12.80 V DCDC=14.10 V
+[ALERT][HARNESS_B] ECU_A=14.10 V ECU_B=12.90 V DCDC=14.10 V | ECU_B low vs DCDC (ΔA=+0.00 V, ΔB=+1.20 V, DCDC≈14.1 V)
+[STATS] frames_seen=63 decoded=63 ECU_A=14.10 V ECU_B=12.90 V DCDC=14.10 V
+[STATS] frames_seen=66 decoded=66 ECU_A=14.10 V ECU_B=13.40 V DCDC=14.10 V
+[STATS] frames_seen=69 decoded=69 ECU_A=14.10 V ECU_B=13.80 V DCDC=14.10 V
+[STATS] frames_seen=72 decoded=72 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=75 decoded=75 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=78 decoded=78 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=81 decoded=81 ECU_A=14.10 V ECU_B=14.10 V DCDC=14.10 V
+[STATS] frames_seen=84 decoded=84 ECU_A=14.10 V ECU_B=14.00 V DCDC=14.10 V
+[STATS] frames_seen=87 decoded=87 ECU_A=14.10 V ECU_B=13.40 V DCDC=14.10 V
+[ALERT][HARNESS_B] ECU_A=14.10 V ECU_B=13.10 V DCDC=14.10 V | ECU_B low vs DCDC (ΔA=+0.00 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=90 decoded=90 ECU_A=14.10 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_B] ECU_A=14.10 V ECU_B=13.10 V DCDC=14.10 V | ECU_B low vs DCDC (ΔA=+0.00 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=93 decoded=93 ECU_A=14.10 V ECU_B=13.10 V DCDC=14.10 V
+[STATS] frames_seen=96 decoded=96 ECU_A=13.70 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.30 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.80 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=99 decoded=99 ECU_A=13.30 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=102 decoded=102 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[STATS] frames_seen=105 decoded=105 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=108 decoded=108 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=111 decoded=111 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=114 decoded=114 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=117 decoded=117 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[STATS] frames_seen=120 decoded=120 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=123 decoded=123 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=126 decoded=126 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=129 decoded=129 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=132 decoded=132 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=135 decoded=135 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[STATS] frames_seen=138 decoded=138 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=141 decoded=141 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=144 decoded=144 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=147 decoded=147 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=150 decoded=150 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
+[ALERT][HARNESS_C] ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V | Both ECUs low vs DCDC (ΔA=+0.90 V, ΔB=+1.00 V, DCDC≈14.1 V)
+[STATS] frames_seen=153 decoded=153 ECU_A=13.20 V ECU_B=13.10 V DCDC=14.10 V
