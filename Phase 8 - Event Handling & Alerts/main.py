@@ -32,8 +32,7 @@ DBC_PATH = Path(__file__).with_name("harness_demo.dbc")
 
 # Google Apps Script web app URL (your working one)
 GSHEETS_WEBHOOK_URL = (
-    "https://script.google.com/macros/s/"
-    "AKfycbyNU0A-PTYU9HwUpjtijHcHxtK73jK7oHEMuEX7jW3hWdqlgMtffAFZ-3YsRNSnUVv-/exec"
+    "gsheetURLgoeshere"  <--------------------------------------------!!!!!!!!!!!!
 )
 
 # How often to print stats
@@ -429,3 +428,4 @@ def init_dbc():
 if __name__ == "__main__":
     init_dbc()
     App.run(user_loop=user_loop)
+
